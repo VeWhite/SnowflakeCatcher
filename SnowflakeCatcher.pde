@@ -27,16 +27,23 @@ void draw()
 }
 void mouseDragged()
 {
- /* strokeWeight(10);
-  if(mouseButton == Right)
+ 
+  strokeWeight(10);
+  if(mouseButton == RIGHT)
   {
     stroke(0);
   }
   else 
   {
-    stroke(255, 0, 0);
+    stroke(255, 255, 255);
   }
-  line(mouseX, mouseY, pmouseX, pmouseY); */
+  line(mouseX, mouseY, pmouseX, pmouseY); 
+
+strokeWeight(1);
+stroke(49);
+
+
+
 }
 
 class Snowflake
@@ -56,7 +63,7 @@ class Snowflake
   }
   void lookDown()
   {
-    if(y >= 0 && y <= 300 && get(x - 2, y + 5) != color(49) || get(x + 2, y + 5) != color(49))
+    if(x >= 0 && x < 299 && y >= 0 && y < 299 && get(x - 2, y + 5) != color(49) || get(x + 2, y + 5) != color(49))
     {
       isMoving = false;
     }
@@ -69,7 +76,7 @@ class Snowflake
   void erase()
   {
     fill(49);
-    ellipse(x, y, 7, 7);
+    ellipse(x, y, 8, 8);
   }
   void move()
   {
